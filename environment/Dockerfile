@@ -84,10 +84,3 @@ RUN git submodule init && git submodule update
 # By default run an SSH daemon. To run locally instead, use something like this:
 #    docker run -it --user fuzzer afl-training:latest /bin/bash
 ##############
-USER root
-
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-
-EXPOSE 22
-CMD ["entrypoint.sh"]
-# on some systems you might want to run AFLplusplus/afl-system-config; only works if the container is run in privileged mode and you don't care about security of the host
